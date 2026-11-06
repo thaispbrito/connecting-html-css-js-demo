@@ -45,9 +45,20 @@
 
 // document.addEventListener('DOMContentLoaded', registerEventHandlers);
 
-// Adding the event object
+
+/// FORESHADOWING-STATE-DEMO
+
+const state = {
+  crabCount: 0,
+};
+
+// Adding the event object + other functionality to modify state and then modify the DOM
 const addCrab = (event) => {
   console.log('in addCrab:', event);
+  
+  state.crabCount += 1;
+  const crabCountContainer = document.querySelector('#crabCount');
+  crabCountContainer.textContent = `Crab Count: ${state.crabCount}`;
 
   const newCrab = document.createElement('span');
   const crabContainer = document.querySelector('#crabContainer');
